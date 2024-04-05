@@ -95,6 +95,17 @@ class Student {
 		this.money = this.money - 1500; // 가진돈 1500원을 잃음
 	}
 	
+	// 택시에 타서 요금을 지불하는 메소드
+	public void takeTaxi(Taxi taxi) {
+		
+		if (money < 10000) {
+			System.out.println("택시에 탑승할 수 없습니다.");
+			return;
+		}
+		
+		taxi.take(10000);
+		this.money = this.money - 10000;
+	}
 	public void showInfo() {
 		
 		System.out.println(studentName + "님의 남은 돈은 " + money + "입니다.");
